@@ -1,0 +1,63 @@
+<form class="form-horizontal">
+
+    <div class="row-fluid" style="display: flex; align-items: center; justify-content: center;">
+				<div class="span3"><h5>{{ _('Topic') }}</h5></div>
+	</div>
+
+    <div >
+        <div class="row-fluid" style="display: flex; align-items: center; justify-content: center;">
+            <div class="span3"><input type="text" class="span12" data-bind="value: settingsViewModel.settings.plugins.MQTTPowerOutlet.topics"></div>
+            </div>
+    </div>
+
+    <div style="padding-left: 125px;">
+        <div class="row-fluid">
+                    <div class="span2"><h5>{{ _('MessageON') }}</h5></div>
+                    <div class="span2" style="padding-left: 20px";><h5>{{ _('MessageOFF') }}</h5></div>
+                    <div class="span2" style="padding-left: 40px";><h5>{{ _('Icon') }} </h5></div>
+	</div>
+    </div>
+
+    <div >
+        <div class="row-fluid" style="margin-bottom: 5px" data-bind="foreach: settingsViewModel.settings.plugins.MQTTPowerOutlet.btn_1">
+            <div class="span1" style="align-items: center;padding-left: 35px;"><i class="fas fa-plug icon"></i></div>
+            <div class="span1" style="padding-right: 20px;"><span class="label">Outlet 1</span></div>
+            <div class="span2"><input type="text" class="span12" data-bind="value: msgON"></div>
+            <div class="span2"><input type="text" class="span12" data-bind="value: msgOFF"></div>
+            <div class="span2"><input type="text" class="span12" data-bind="value: icon"></div>
+            </div>
+    </div>
+
+    <div >
+        <div class="row-fluid" style="margin-bottom: 5px" data-bind="foreach: settingsViewModel.settings.plugins.MQTTPowerOutlet.btn_2">
+            <div class="span1" style="align-items: center;padding-left: 35px;"><i class="fas fa-plug icon"></i></div>
+            <div class="span1" style="padding-right: 20px;"><span class="label">Outlet 2</span></div>
+            <div class="span2"><input type="text" class="span12" data-bind="value: msgON"></div>
+            <div class="span2"><input type="text" class="span12" data-bind="value: msgOFF"></div>
+            <div class="span2"><input type="text" class="span12" data-bind="value: icon"></div>
+            </div>
+    </div>
+
+    <div >
+        <div class="row-fluid" style="margin-bottom: 5px" data-bind="foreach: settingsViewModel.settings.plugins.MQTTPowerOutlet.btn_3">
+            <div class="span1" style="align-items: center;padding-left: 35px;"><i class="fas fa-plug icon"></i></div>
+            <div class="span1" style="padding-right: 20px;"><span class="label">Outlet 3</span></div>
+            <div class="span2"><input type="text" class="span12" data-bind="value: msgON"></div>
+            <div class="span2"><input type="text" class="span12" data-bind="value: msgOFF"></div>
+            <div class="span2"><input type="text" class="span12" data-bind="value: icon"></div>
+            </div>
+    </div>
+
+    <div >
+        <div class="row-fluid" style="margin-bottom: 5px" data-bind="foreach: settingsViewModel.settings.plugins.MQTTPowerOutlet.btn_4">
+            <div class="span1" style="align-items: center;padding-left: 35px;"><i class="fas fa-plug icon"></i></div>
+            <div class="span1" style="padding-right: 20px;"><span class="label">Outlet 4</span></div>
+            <div class="span2"><input type="text" class="span12" data-bind="value: msgON"></div>
+            <div class="span2"><input type="text" class="span12" data-bind="value: msgOFF"></div>
+            <div class="span2"><input type="text" class="span12" data-bind="value: icon"></div>
+            </div>
+    </div>
+
+
+
+</form>

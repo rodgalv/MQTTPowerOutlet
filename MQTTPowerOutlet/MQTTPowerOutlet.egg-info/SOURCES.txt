@@ -1,0 +1,16 @@
+MANIFEST.in
+README.md
+setup.cfg
+setup.py
+MQTTPowerOutlet.egg-info/PKG-INFO
+MQTTPowerOutlet.egg-info/SOURCES.txt
+MQTTPowerOutlet.egg-info/dependency_links.txt
+MQTTPowerOutlet.egg-info/entry_points.txt
+MQTTPowerOutlet.egg-info/not-zip-safe
+MQTTPowerOutlet.egg-info/requires.txt
+MQTTPowerOutlet.egg-info/top_level.txt
+octoprint_MQTTPowerOutlet/__init__.py
+octoprint_MQTTPowerOutlet/static/css/MQTTPowerOutlet.css
+octoprint_MQTTPowerOutlet/static/js/MQTTPowerOutlet.js
+octoprint_MQTTPowerOutlet/static/less/MQTTPowerOutlet.less
+octoprint_MQTTPowerOutlet/templates/README.txt

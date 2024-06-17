@@ -1,0 +1,2 @@
+[octoprint.plugin]
+MQTTPowerOutlet = octoprint_MQTTPowerOutlet

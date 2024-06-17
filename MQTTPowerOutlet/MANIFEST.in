@@ -1,0 +1,4 @@
+include README.md
+recursive-include octoprint_MQTTPowerOutlet/templates *
+recursive-include octoprint_MQTTPowerOutlet/translations *
+recursive-include octoprint_MQTTPowerOutlet/static *
