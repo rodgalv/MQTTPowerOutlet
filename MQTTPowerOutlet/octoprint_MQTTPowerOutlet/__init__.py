@@ -14,10 +14,11 @@ class MqttpoweroutletPlugin(octoprint.plugin.StartupPlugin,
 	def get_settings_defaults(self):
 		return dict(
 				topics ="octoprint/plugin/poweroutlet/pub",
-				btn_1 = [dict(msgON = "ON", msgOFF = "OFF", state = False, icon="icon-home")],
-				btn_2 = [dict(msgON = "ON", msgOFF = "OFF", state = False, icon="icon-home")],
-				btn_3 = [dict(msgON = "ON", msgOFF = "OFF", state = False, icon="icon-home")],
-				btn_4 = [dict(msgON = "ON", msgOFF = "OFF", state = False, icon="icon-home")]
+				btn_1 = dict(msgON = "ON", msgOFF = "OFF", state = False, icon="icon-home"),
+				btn_2 = dict(msgON = "ON", msgOFF = "OFF", state = False, icon="icon-home"),
+				btn_3 = dict(msgON = "ON", msgOFF = "OFF", state = False, icon="icon-home"),
+				btn_4 = dict(msgON = "ON", msgOFF = "OFF", state = False, icon="icon-home"),
+				ptn_1 = dict(msgON = "ON", msgOFF = "OFF", state = False, icon="icon-home")
 		)
 
 	
@@ -42,8 +43,6 @@ class MqttpoweroutletPlugin(octoprint.plugin.StartupPlugin,
 	##~~ AssetPlugin mixin
 
 	def get_assets(self):
-		# Define your plugin's asset files to automatically include in the
-		# core UI here.
 		return {
 			"js": ["js/MQTTPowerOutlet.js"],
 			"css": ["css/MQTTPowerOutlet.css"],
@@ -51,13 +50,17 @@ class MqttpoweroutletPlugin(octoprint.plugin.StartupPlugin,
 		}
 
 	def toggle(self, n):
+		
 		btn_key = f"btn_{n}"
-		btn_settings = self._settings.get([btn_key])[0]
-		btn_settings["state"] = not btn_settings["state"]
-		self._settings.set([btn_key], [btn_settings])
-		self._settings.save()
-		self._logger.info("state: %s", btn_settings["state"])
+		btn_settings = self._settings.get([btn_key])
+		self._logger.info("before: %s", self._settings.get([btn_key]))
 
+		btn_settings["state"] = not btn_settings["state"]
+		
+		self._settings.set([btn_key], btn_settings)
+		self._logger.info("after: %s", btn_settings)
+		
+		
 		if btn_settings["state"]:
 			self.mqtt_publish(self._settings.get(["topics"]), btn_settings["msgON"])
 		else: 
@@ -77,9 +80,6 @@ class MqttpoweroutletPlugin(octoprint.plugin.StartupPlugin,
 	##~~ Softwareupdate hook
 
 	def get_update_information(self):
-		# Define the configuration for your plugin to use with the Software Update
-		# Plugin here. See https://docs.octoprint.org/en/master/bundledplugins/softwareupdate.html
-		# for details.
 		return {
 			"MQTTPowerOutlet": {
 				"displayName": "Mqttpoweroutlet Plugin",

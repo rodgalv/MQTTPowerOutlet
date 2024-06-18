@@ -13,4 +13,5 @@ octoprint_MQTTPowerOutlet/__init__.py
 octoprint_MQTTPowerOutlet/static/css/MQTTPowerOutlet.css
 octoprint_MQTTPowerOutlet/static/js/MQTTPowerOutlet.js
 octoprint_MQTTPowerOutlet/static/less/MQTTPowerOutlet.less
+octoprint_MQTTPowerOutlet/templates/MQTTPowerOutlet_settings.jinja2
 octoprint_MQTTPowerOutlet/templates/README.txt

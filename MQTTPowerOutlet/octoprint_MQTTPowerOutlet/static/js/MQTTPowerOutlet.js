@@ -17,13 +17,11 @@ $(function() {
         self.btn_2 = ko.observableArray();
         self.btn_3 = ko.observableArray();
         self.btn_4 = ko.observableArray();
+        self.ptn_1 = ko.observableArray();
        
 
 self.sendMsg = function(data) {
-    console.log(self.topics);
-    //console.log(self.btn_1);
-    console.log(self.settingsViewModel.settings.plugins.MQTTPowerOutlet.topics);
-    //alert(self.settingsViewModel.settings);
+   
     $.ajax({
         url: API_BASEURL + "plugin/MQTTPowerOutlet",
         type: "POST",
@@ -36,14 +34,15 @@ self.sendMsg = function(data) {
     }).done(function(response){console.log(response);});
 }
 
+
 self.getAdditionalControls = function() {
 
     var buttons = [
         { name: "Power", type: "section", layout: "horizontal", children: [
-            {type: "javascript", javascript: function() { self.sendMsg(1); }, name: "Printer", enabled: "true"},
+            {type: "javascript", javascript: function() { self.sendMsg(1); }, name: "Printer", enabled: "true", icon: "fas fa-plug icon"},//icon does not work!
             {type: "javascript", javascript: function() { self.sendMsg(2); }, name: "Fan", enabled: true},
-            {type: "javascript", javascript: function() { self.sendMsg(3); }, name: self.btn_1().icon, confirm: "*.", enabled: "true"},
-            {type: "javascript", javascript: function() { self.sendMsg(4); }, name: "*", confirm: "*.", enabled: "false"},
+            {type: "javascript", javascript: function() { self.sendMsg(3); }, name: "o",  enabled: "true"},
+            {type: "javascript", javascript: function() { self.sendMsg(4); }, name: "*",  enabled: "false"},
 
         ]}
     ];
